@@ -14,6 +14,7 @@ function createRedisClient() {
     maxRetriesPerRequest: 3,
     enableReadyCheck: true,
     lazyConnect: true,
+    tls: url.startsWith("rediss://") ? {} : undefined,
   });
 
   client.on("error", (err) => {
