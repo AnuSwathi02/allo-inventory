@@ -29,7 +29,8 @@ export async function POST(
     }
   }
 
-  const r = result.reservation!;
+if (!('reservation' in result)) return NextResponse.json({ error: 'Failed' }, { status: 500 });
+const r = result.reservation!;
   return NextResponse.json({
     id: r.id,
     status: r.status,
