@@ -1,5 +1,6 @@
 // prisma/seed.ts
-import { PrismaClient, Decimal } from "@prisma/client";
+import { PrismaClient } from "@prisma/client";
+import Decimal from "decimal.js";
 
 const prisma = new PrismaClient();
 
