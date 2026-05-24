@@ -53,6 +53,7 @@ export async function POST(req: NextRequest) {
     }
   }
 
+  if (!('reservation' in result)) return NextResponse.json({ error: 'Failed' }, { status: 500 });
   const r = result.reservation!;
   return NextResponse.json(
     {
